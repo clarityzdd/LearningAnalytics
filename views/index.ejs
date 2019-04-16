@@ -3,9 +3,43 @@
   <head>
     <title><%= title %></title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+
+  <form>
+    <div class="form-group">
+      <label for="entidad">Entidad</label>
+      <div>
+        <select id="entidad" name="entidad" class="custom-select" required="required">
+          <option value="alumno">Alumnos</option>
+          <option value="asignatura">Asignaturas</option>
+          <option value="profesor">Profesores</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group">
+      <label>Objeto</label>
+      <div>
+        <div class="custom-control custom-radio custom-control-inline">
+          <input name="object" id="radio_0" type="radio" class="custom-control-input" value="id_student">
+          <label for="radio_0" class="custom-control-label">ID estudiante</label>
+        </div>
+        <div class="custom-control custom-radio custom-control-inline">
+          <input name="radio" id="radio_1" type="radio" class="custom-control-input" value="gender">
+          <label for="radio_1" class="custom-control-label">Genero</label>
+        </div>
+        <div class="custom-control custom-radio custom-control-inline">
+          <input name="radio" id="radio_2" type="radio" class="custom-control-input" value="region">
+          <label for="radio_2" class="custom-control-label">Region</label>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <button name="submit" type="submit" class="btn btn-primary">Enviar</button>
+    </div>
+  </form>
+
   </body>
 </html>
