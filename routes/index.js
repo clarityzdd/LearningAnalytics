@@ -7,8 +7,14 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/', function(req, res, next) {
-  console.log("[SPARK SUBMIT]" + shell.exec("/home/user1/Documentos/sparkApp/public/shell/submit.sh"));
-  console.log("[SPARK GET]" + shell.exec("/home/user1/Documentos/sparkApp/public/shell/getData.sh"));
+
+  var assessment_type = req.body.assessment_type;
+
+  //console.log("TEST" + shell.exec('./public/shell/test.sh ' + assessment_type));
+
+  console.log("[SPARK SUBMIT]" + shell.exec('./public/shell/submit.sh '+ assessment_type));
+  console.log("[SPARK GET]" + shell.exec('./public/shell/getData.sh'));
+
   res.render('../views/index.ejs', { title: 'Learning Analytics App' });
 });
 

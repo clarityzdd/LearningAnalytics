@@ -4,7 +4,6 @@ var path = require('path');
 var shell = require('shelljs');
 var bodyParser = require('body-parser');
 
-
 var app = express();
 
 
@@ -16,7 +15,7 @@ app.use(bodyParser.json());
 app.use("/", routes);
 app.use('/', express.static(path.join(__dirname, '/public/javascripts')));
 app.use('/', express.static(path.join(__dirname, '/public/stylesheets')));
-app.use('/', express.static(path.join(__dirname, '/public/shell')));
+app.use('/jquery', express.static(__dirname + '/node_modules/jquery/dist/'));
 
 app.listen(8888, function() {
   console.log("Server started on port 8888");
