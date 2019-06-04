@@ -11,10 +11,6 @@ a {
   display: none;
 }
 
-#assessment_type_div {
-  display: none;
-}
-
-#weight_div {
+#assessment_filter {
   display: none;
 }
