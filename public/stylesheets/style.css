@@ -9,8 +9,17 @@ a {
 
 #btn_div {
   display: none;
+  padding-left: 1em;
 }
 
 #assessment_filter {
   display: none;
+}
+
+#student_filter {
+  display: none;
+}
+
+#course_filter {
+  display:none;
 }

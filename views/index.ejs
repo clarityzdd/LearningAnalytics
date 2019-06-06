@@ -12,156 +12,244 @@
 
   <form class="form-horizontal dataentry" id="form" action="/" method="post">
     <fieldset>
+     <div class="row">
+         <div class="col-4 mx-auto">
+            <legend>Learning Analytics</legend>
 
-      <legend>Learning Analytics</legend>
+          <!-- Select Base -->
 
-
-      <!-- Select Base -->
-      <div class="form-group">
-        <label class="col-md-4 control-label" for="selectbasic">Entidad</label>
-        <div class="col-md-4">
-          <select id="selectbasic" name="selectbasic" class="form-control" onchange="changeSelect(this.value)">
-            <option value="none" selected disabled>Seleccione una opción</option>
-            <option value="student">Alumnos</option>
-            <option value="course">Curso</option>
-            <option value="assessment">Calificaciones</option>
-          </select>
-        </div>
-      </div>
-
-      <!-- Assessment Type Select -->
-       <div id="assessment_filter">
-          <div class="form-group" id="assessment_type_div">
-            <label class="col-md-4 control-label" for="assessment_type">Tipo de calificaciones</label>
-            <div class="col-md-4">
-                <select id="assessment_type" name="assessment_type" class="form-control" style="width: 250px;">
-                    <option value="undefined">Seleccione una opción</option>
-                    <option value="TMA">Tutor Marked Assessment (TMA)</option>
-                    <option value="CMA">Computer Marked Assessment (CMA)</option>
-                    <option value="Exam">Final Examen (Exam)</option>
-                </select>
-            </div>
+          <div class="card mx-auto">
+          <div class="card-header" style="background-color: #cbe1ed;">
+              <div class="form-group">
+                <label class="col-md-4 control-label" for="selectbasic">Entidad</label>
+                <div class="col-md-4">
+                  <select id="selectbasic" name="selectbasic" class="form-control" style="width: 250px;" onchange="changeSelect(this.value)">
+                    <option value="none" selected disabled>Seleccione una opción</option>
+                    <option value="course">Entorno y Recursos</option>
+                    <option value="assessment">Calificaciones</option>
+                  </select>
+                </div>
+              </div>
           </div>
 
-             <!-- Assessment Weight -->
-             <div class="form-group" id="weight_div">
-               <label class="col-md-4 control-label" for="weight">Peso de calificación</label>
-               <div class="col-md-4">
-                 <label class="radio-inline" for="weight-0">
-                   <input type="checkbox" name="weight" id="weight-0" value="less" onclick="checkboxCheck1(this)">
-                     <i class="fa fa-less-than-equal">20</i> &nbsp;
-                 </label>
-                 <label class="radio-inline" for="weight-1">
-                   <input type="checkbox" name="weight" id="weight-1" value="greater" onclick="checkboxCheck1(this)">
-                     <i class="fa fa-greater-than-equal">20</i>
-                 </label>
-              </div>
-            </div>
+           <div class="card-body">
+               <div class="border-left border-success" id="assessment_filter" style="background-color: #f3fff2;">
+                   <!-- Assessment Type Select -->
+                   <div class="form-group" id="assessment_type_div">
+                       <label class="col-md-4 control-label" for="assessment_type">Tipo de Calificaciones</label>
+                       <div class="col-md-4">
+                           <select id="assessment_type" name="assessment_type" class="form-control" style="width: 250px;">
+                               <option value="undefined">Seleccione una opción</option>
+                               <option value="TMA">Tutor Marked Assessment (TMA)</option>
+                               <option value="CMA">Computer Marked Assessment (CMA)</option>
+                               <option value="Exam">Final Examen (Exam)</option>
+                           </select>
+                       </div>
+                   </div>
 
+                   <!-- Assessment Weight -->
+                   <div class="form-group" id="weight_div">
+                       <label class="col-md-4 control-label" for="weight">Peso de Calificación</label>
+                       <div class="col-md-4">
+                           <label class="radio-inline" for="weight-0">
+                               <input type="checkbox" name="weight" id="weight-0" value="less" onclick="checkboxCheck1(this)">
+                               <i class="fa fa-less-than-equal">20</i> &nbsp;
+                         </label>
+                         <label class="radio-inline" for="weight-1">
+                             <input type="checkbox" name="weight" id="weight-1" value="greater" onclick="checkboxCheck1(this)">
+                             <i class="fa fa-greater-than-equal">20</i>
+                         </label>
+                       </div>
+                   </div>
 
-            <!-- Assessment Score -->
-            <div class="form-group" id="score_div">
-                <label class="col-md-4 control-label" for="score">Puntuación</label>
+                   <!-- Assessment Score -->
+                   <div class="form-group" id="score_div">
+                       <label class="col-md-4 control-label" for="score">Puntuación</label>
+                       <div class="col-md-4">
+                           <label class="radio-inline" for="score-0">
+                               <input type="checkbox" name="score" id="score-0" value="less" onclick="checkboxCheck2(this)">
+                                    <i class="fa fa-less-than-equal"></i>
+                           </label>&nbsp;
+                           <input type="text" name="score_num" id="score-num" placeholder="0-100" style="width: 50px">&nbsp;
+                           <label class="radio-inline" for="score-1">
+                               <input type="checkbox" name="score" id="score-1" value="greater" onclick="checkboxCheck2(this)">
+                                    <i class="fa fa-greater-than-equal"></i>
+                           </label>
+                       </div>
+                   </div>
+               </div>
+
+               <div class="border-left border-info" id="student_filter" style="background-color: #f2feff;">
+                   <!-- Gender -->
+                   <div class="form-group" id="gender_div">
+                       <label class="col-md-4 control-label" for="gender">Género</label>
+                           <div class="col-md-4">
+                               <select id="gender" name="gender" class="form-control" style="width: 250px;">
+                                   <option value="undefined">Seleccione una opción</option>
+                                   <option value="M">Masculino</option>
+                                   <option value="F">Femenino</option>
+                               </select>
+                           </div>
+                   </div>
+
+                   <!-- Region -->
+                   <div class="form-group" id="region_div">
+                       <label class="col-md-4 control-label" for="region">Región</label>
+                           <div class="col-md-4">
+                               <input type="text" name="region" id="region" placeholder="London Region">
+                           </div>
+                   </div>
+
+                   <!-- Highest Education -->
+                   <div class="form-group" id="education_div">
+                       <label class="col-md-4 control-label" for="education">Nivel Educativo</label>
+                           <div class="col-md-4">
+                               <select id="education" name="education" class="form-control" style="width: 250px;">
+                                   <option value="undefined">Seleccione una opción</option>
+                                   <option value="HE">HE Qualification</option>
+                                   <option value="A">A Level or Equivalent</option>
+                                   <option value="LowerA">Lower Than A Level</option>
+                                   <option value="Post">Post Graduate Qualification</option>
+                               </select>
+                           </div>
+                   </div>
+
+                   <!-- Age Band -->
+                   <div class="form-group" id="age_div">
+                       <label class="col-md-4 control-label" for="age">Rango de Edad</label>
+                           <div class="col-md-4">
+                               <select id="age" name="age" class="form-control" style="width: 250px;">
+                                   <option value="undefined">Seleccione una opción</option>
+                                   <option value="0-35">[0-35]</option>
+                                   <option value="35-55">[35-55]</option>
+                                   <option value="55<=">[55<=]</option>
+                               </select>
+                           </div>
+                   </div>
+
+                   <!-- Disability -->
+                   <div class="form-group" id="disability_div">
+                       <label class="col-md-4 control-label" for="disability">Discapacidad</label>
+                           <div class="col-md-4">
+                               <label class="radio-inline" for="disability-0">
+                                   <input type="checkbox" name="disability" id="disability-0" value="Y" onclick="checkboxCheck3(this)">Sí&nbsp;&nbsp;
+                               </label>
+                               <label class="radio-inline" for="disability-1">
+                                   <input type="checkbox" name="disability" id="disability-1" value="N" onclick="checkboxCheck3(this)">No
+                               </label>
+                           </div>
+                   </div>
+
+                   <!-- Final Result -->
+                   <div class="form-group" id="result_div">
+                       <label class="col-md-4 control-label" for="result">Resultado Final</label>
+                            <div class="col-md-4">
+                                <select id="result" name="result" class="form-control" style="width: 250px;">
+                                   <option value="undefined">Seleccione una opción</option>
+                                   <option value="Withdrawn">Withdrawn</option>
+                                   <option value="Fail">Fail</option>
+                                   <option value="Pass">Pass</option>
+                               </select>
+                           </div>
+                   </div>
+               </div>
+
+               <div class ="border-left border-dark" id="course_filter" style="background-color: #faf7ff;">
+                   <!-- Date Registration -->
+                   <div class="form-group" id="registration_div">
+                       <label class="col-md-6 control-label" for="registration">Días Registrado</label>
+                       <div class="col-md-6">
+                           <label class="radio-inline" for="registration-0">
+                               <input type="checkbox" name="registration" id="registration-0" value="less" onclick="checkboxCheck4(this)">
+                               <i class="fa fa-less-than-equal"></i>
+                           </label>&nbsp;
+                           <input type="text" name="registration_num" id="registration-num" placeholder="0-365" style="width: 75px">&nbsp;
+                           <label class="radio-inline" for="registration-1">
+                               <input type="checkbox" name="registration" id="registration-1" value="greater" onclick="checkboxCheck4(this)">
+                               <i class="fa fa-greater-than-equal"></i>
+                           </label>
+                       </div>
+                   </div>
+
+                   <!-- Resource clicks -->
+                   <div class="form-group" id="clicks_div">
+                       <label class="col-md-6 control-label" for="clicks">Nº Accesos a Recurso</label>
+                       <div class="col-md-6">
+                           <label class="radio-inline" for="clicks-0">
+                               <input type="checkbox" name="clicks" id="clicks-0" value="less" onclick="checkboxCheck5(this)">
+                               <i class="fa fa-less-than-equal"></i>
+                           </label>&nbsp;
+                           <input type="text" name="clicks_num" id="clicks-num" placeholder="0-50" style="width: 50px">&nbsp;
+                           <label class="radio-inline" for="clicks-1">
+                               <input type="checkbox" name="clicks" id="clicks-1" value="greater" onclick="checkboxCheck5(this)">
+                               <i class="fa fa-greater-than-equal"></i>
+                           </label>
+                       </div>
+                   </div>
+
+                   <!-- Activity Type -->
+                   <div class="form-group" id="activity_div">
+                       <label class="col-md-4 control-label" for="activity">Tipo de Recurso</label>
+                       <div class="col-md-4">
+                           <select id="activity" name="activity" class="form-control" style="width: 250px;">
+                               <option value="undefined">Seleccione una opción</option>
+                               <option value="url">URL</option>
+                               <option value="resource">Recurso</option>
+                               <option value="oucontent">OU Content</option>
+                               <option value="questionnaire">Cuestionario</option>
+                               <option value="repeatactivity">Actividad</option>
+                               <option value="quiz">Exámen</option>
+                               <option value="externalquiz">Exámen externo</option>
+                               <option value="forumng">Foro</option>
+                               <option value="glossary">Glosario</option>
+                               <option value="ouwiki">OU Wiki</option>
+                               <option value="homepage">Página de Inicio</option>
+                               <option value="page">Página</option>
+                               <option value="subpage">Subpágina</option>
+                               <option value="ouelluminate">Conferencia</option>
+                               <option value="oucollaborate">Colaboración</option>
+                               <option value="dataplus">Dataplus</option>
+                           </select>
+                       </div>
+                   </div>
+
+                   <!-- Week to -->
+                   <div class="form-group" id="week_div">
+                       <label class="col-md-6 control-label" for="week">Semana Fin de Recurso</label>
+                       <div class="col-md-6">
+                           <input type="text" name="week" id="week" placeholder="0-40" style="width: 50px">
+                       </div>
+                   </div>
+
+                   <!-- Length -->
+                   <div class="form-group" id="length_div">
+                       <label class="col-md-6 control-label" for="length">Duración Curso (días)</label>
+                       <div class="col-md-6">
+                           <label class="radio-inline" for="length-0">
+                               <input type="checkbox" name="length" id="length-0" value="less" onclick="checkboxCheck6(this)">
+                               <i class="fa fa-less-than-equal"></i>
+                           </label>&nbsp;
+                           <input type="text" name="length_num" id="length-num" placeholder="200-300" style="width: 75px">&nbsp;
+                           <label class="radio-inline" for="length-1">
+                               <input type="checkbox" name="length" id="length-1" value="greater" onclick="checkboxCheck6(this)">
+                               <i class="fa fa-greater-than-equal"></i>
+                           </label>
+                       </div>
+                   </div>
+
+               </div>
+           </div>
+
+              <div class="form-group" id="btn_div">
                 <div class="col-md-4">
-                    <label class="radio-inline" for="score-0">
-                        <input type="checkbox" name="score" id="score-0" value="less" onclick="checkboxCheck2(this)">
-                            <i class="fa fa-less-than-equal"></i>
-                    </label>&nbsp;
-                    <input type="text" name="score_num" id="score-num" placeholder="0-100" style="width: 50px">&nbsp;
-                    <label class="radio-inline" for="score-1">
-                        <input type="checkbox" name="score" id="score-1" value="greater" onclick="checkboxCheck2(this)">
-                            <i class="fa fa-greater-than-equal"></i>
-                    </label>
+                    <button type="submit" id="enviar-btn" name="enviar-btn" class="btn btn-primary" onclick="sendIt()">Enviar</button>
                 </div>
-            </div>
+              </div>
 
-           <!-- Gender -->
-           <div class="form-group" id="gender_div">
-               <label class="col-md-4 control-label" for="gender">Género</label>
-               <div class="col-md-4">
-                   <select id="gender" name="gender" class="form-control" style="width: 250px;">
-                       <option value="undefined">Seleccione una opción</option>
-                       <option value="Male">Masculino</option>
-                       <option value="Female">Femenino</option>
-                   </select>
-               </div>
-           </div>
-
-           <!-- Region -->
-           <div class="form-group" id="region_div">
-               <label class="col-md-4 control-label" for="region">Región</label>
-               <div class="col-md-4">
-                   <input type="text" name="region" id="region" placeholder="London Region">
-               </div>
-           </div>
-
-           <!-- Highest Education -->
-           <div class="form-group" id="education_div">
-               <label class="col-md-4 control-label" for="education">Nivel Educativo</label>
-               <div class="col-md-4">
-                   <select id="education" name="education" class="form-control" style="width: 250px;">
-                       <option value="undefined">Seleccione una opción</option>
-                       <option value="HE">HE Qualification</option>
-                       <option value="A">A Level or Equivalent</option>
-                       <option value="LowerA">Lower Than A Level</option>
-                       <option value="Post">Post Graduate Qualification</option>
-                   </select>
-               </div>
-           </div>
-
-           <!-- Age Band -->
-           <div class="form-group" id="age_div">
-               <label class="col-md-4 control-label" for="age">Rango de Edad</label>
-               <div class="col-md-4">
-                   <select id="age" name="age" class="form-control" style="width: 250px;">
-                       <option value="undefined">Seleccione una opción</option>
-                       <option value="0-35">[0-35]</option>
-                       <option value="35-55">[35-55]</option>
-                       <option value="55<=">[55<=]</option>
-                   </select>
-               </div>
-           </div>
-
-           <!-- Disability -->
-           <div class="form-group" id="disability_div">
-               <label class="col-md-4 control-label" for="disability">Discapacidad</label>
-               <div class="col-md-4">
-                   <label class="radio-inline" for="disability-0">
-                       <input type="checkbox" name="disability" id="disability-0" value="Y" onclick="checkboxCheck3(this)">
-                       Sí&nbsp;&nbsp;
-                   </label>
-                   <label class="radio-inline" for="disability-1">
-                       <input type="checkbox" name="disability" id="disability-1" value="N" onclick="checkboxCheck3(this)">
-                       No
-                   </label>
-               </div>
-           </div>
-
-           <!-- Final Result -->
-           <div class="form-group" id="result_div">
-               <label class="col-md-4 control-label" for="result">Resultado Final</label>
-               <div class="col-md-4">
-                   <select id="result" name="result" class="form-control" style="width: 250px;">
-                       <option value="undefined">Seleccione una opción</option>
-                       <option value="Withdrawn">Withdrawn</option>
-                       <option value="Fail">Fail</option>
-                       <option value="Pass">Pass</option>
-                   </select>
-               </div>
-           </div>
-        </div>
-
-
-
-
-      <div class="form-group" id="btn_div">
-        <div class="col-md-4">
-          <button type="submit" id="enviar-btn" name="enviar-btn" class="btn btn-primary" onclick="sendIt()">Enviar</button>
-        </div>
-      </div>
-
+          </div>
+         </div>
+     </div>
     </fieldset>
   </form>
-
   </body>
 </html>

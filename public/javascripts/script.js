@@ -1,13 +1,17 @@
 function changeSelect(value) {
     if (value === "assessment") {
         document.getElementById('assessment_filter').style.display = 'block';
-    } else if (value !== "assessment") {
+        document.getElementById('student_filter').style.display = 'block';
+        document.getElementById('course_filter').style.display = 'none';
+    } else if (value === "course") {
+        document.getElementById('course_filter').style.display = 'block';
+        document.getElementById('student_filter').style.display = 'block';
         document.getElementById('assessment_filter').style.display = 'none';
     }
 
-    if (value === "assessment" || value === "student" || value === "course") {
+    if (value === "assessment" || value === "course") {
         document.getElementById('btn_div').style.display = 'block';
-    } else if (value !== "assessment" || value !== "student" || value !== "course") {
+    } else if (value !== "assessment" || value !== "course") {
         document.getElementById('btn_div').style.display = 'none';
     }
 }
@@ -29,28 +33,70 @@ function checkboxCheck1(element){
 function checkboxCheck2(element){
 
     if(element.checked){
-        element.classList.add("marked");
+        element.classList.add("marked2");
     }else{
-        element.classList.remove("marked");
+        element.classList.remove("marked2");
     }
 
-    if(document.getElementsByClassName("marked").length>1){
+    if(document.getElementsByClassName("marked2").length>1){
         element.checked=false;
-        element.classList.remove("marked");
+        element.classList.remove("marked2");
     }
 }
 
 function checkboxCheck3(element){
 
     if(element.checked){
-        element.classList.add("marked");
+        element.classList.add("marked3");
     }else{
-        element.classList.remove("marked");
+        element.classList.remove("marked3");
     }
 
-    if(document.getElementsByClassName("marked").length>1){
+    if(document.getElementsByClassName("marked3").length>1){
         element.checked=false;
-        element.classList.remove("marked");
+        element.classList.remove("marked3");
+    }
+}
+
+function checkboxCheck4(element){
+
+    if(element.checked){
+        element.classList.add("marked4");
+    }else{
+        element.classList.remove("marked4");
+    }
+
+    if(document.getElementsByClassName("marked4").length>1){
+        element.checked=false;
+        element.classList.remove("marked4");
+    }
+}
+
+function checkboxCheck5(element){
+
+    if(element.checked){
+        element.classList.add("marked5");
+    }else{
+        element.classList.remove("marked5");
+    }
+
+    if(document.getElementsByClassName("marked5").length>1){
+        element.checked=false;
+        element.classList.remove("marked5");
+    }
+}
+
+function checkboxCheck6(element){
+
+    if(element.checked){
+        element.classList.add("marked6");
+    }else{
+        element.classList.remove("marked6");
+    }
+
+    if(document.getElementsByClassName("marked6").length>1){
+        element.checked=false;
+        element.classList.remove("marked6");
     }
 }
 

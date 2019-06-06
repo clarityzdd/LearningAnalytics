@@ -1,16 +1,44 @@
 #!/bin/bash
 
 echo "Ejecutando código scala"
-assessment_type=$1
-weight=$2
-score=$3
-score_num=$4
-gender=$5
-region=$6
-education=$7
-age=$8
-disability=$9
-result=${10}
+filter=$1
 
 hdfs dfs -rm -R /output/output.json
-spark-submit --class myproject.Main ./public/jar/scalaapp_2.11-0.1.jar "'"$assessment_type"'" $weight $score $score_num "'"$gender"'" "'"$region"'" "'"$education"'" "'"$age"'" "'"$disability"'" "'"$result"'"
+
+if [ $1 == "assessment" ]
+then
+
+    assessment_type=$2
+    weight=$3
+    score=$4
+    score_num=$5
+    gender=$6
+    region=$7
+    education=$8
+    age=$9
+    disability=${10}
+    result=${11}
+
+    spark-submit --class myproject.Main ./public/jar/scalaapp_2.11-0.1.jar $filter "'"$assessment_type"'" $weight $score $score_num "'"$gender"'" "'"$region"'" "'"$education"'" "'"$age"'" "'"$disability"'" "'"$result"'"
+
+elif [ $1 == "course" ]
+then
+
+    gender=$2
+    region=$3
+    education=$4
+    age=$5
+    disability=$6
+    result=$7
+    registration=$8
+    registration_num=$9
+    clicks=${10}
+    clicks_num=${11}
+    activity=${12}
+    week=${13}
+    length=${14}
+    length_num=${15}
+
+    spark-submit --class myproject.Main ./public/jar/scalaapp_2.11-0.1.jar $filter "'"$gender"'" "'"$region"'" "'"$education"'" "'"$age"'" "'"$disability"'" "'"$result"'" registration registration_num clicks clicks_num week length length_num
+
+fi
