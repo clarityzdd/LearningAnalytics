@@ -7,6 +7,30 @@ a {
   color: #00B7FF;
 }
 
+table
+{
+  width: 100%;
+  font: 17px Calibri;
+}
+table, td
+{
+  border: solid 2px #DDD;
+  border-collapse: collapse;
+  padding: 2px 3px;
+  text-align: center;
+}
+
+tr:nth-child(even) {background-color: #f2f2f2;}
+
+th {
+  border: solid 2px #DDD;
+  border-collapse: collapse;
+  padding: 2px 3px;
+  text-align: center;
+  height: 50px;
+  background-color: #b2d3d7;
+}
+
 #btn_div {
   display: none;
   padding-left: 1em;
