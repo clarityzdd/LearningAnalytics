@@ -6,7 +6,7 @@ router.get('/', function(req, res, next) {
   res.render('../views/index.ejs', { title: 'Learning Analytics App' });
 });
 
-router.post('/', function(req, res, next) {
+router.post('/table', function(req, res, next) {
 
   var filter = req.body.selectbasic;
 
@@ -31,8 +31,9 @@ router.post('/', function(req, res, next) {
     if(clicks_num === "") clicks_num = "undefined";
   var activity = req.body.activity;
   var week = req.body.week;
+    if (week === "") week = "undefined";
   var length = req.body.length;
-  var length_num =req.body.length_num;
+  var length_num = req.body.length_num;
     if(length_num === "") length_num = "undefined";
 
   if (filter === "assessment") {
@@ -46,6 +47,10 @@ router.post('/', function(req, res, next) {
   }
 
   res.render('../views/table.ejs', { title: 'Learning Analytics App' });
+});
+
+router.post('/chart1', function(req, res, next) {
+  res.render('../views/chart.ejs', { title: 'Learning Analytics App' });
 });
 
 module.exports = router;

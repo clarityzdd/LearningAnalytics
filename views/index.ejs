@@ -6,11 +6,10 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
       <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
-    <script src="script.js"></script>
   </head>
   <body>
 
-  <form class="form-horizontal dataentry" id="form" action="/" method="post">
+  <form class="form-horizontal dataentry" id="form" action="/table" method="post">
     <fieldset>
      <div class="row">
          <div class="col-4 mx-auto">
@@ -229,7 +228,7 @@
                                <input type="checkbox" name="length" id="length-0" value="less" onclick="checkboxCheck6(this)">
                                <i class="fa fa-less-than-equal"></i>
                            </label>&nbsp;
-                           <input type="text" name="length_num" id="length-num" placeholder="200-300" style="width: 75px">&nbsp;
+                           <input type="text" name="length_num" id="length_num" placeholder="200-300" style="width: 75px">&nbsp;
                            <label class="radio-inline" for="length-1">
                                <input type="checkbox" name="length" id="length-1" value="greater" onclick="checkboxCheck6(this)">
                                <i class="fa fa-greater-than-equal"></i>
@@ -245,11 +244,18 @@
                     <button type="submit" id="enviar-btn" name="enviar-btn" class="btn btn-primary" onclick="sendIt()">Enviar</button>
                 </div>
               </div>
-
           </div>
          </div>
      </div>
     </fieldset>
   </form>
+
+  <form class="form-horizontal dataentry" id="form" action="/chart1" method="post">
+      <div class="col-md-4">
+        <button id="chart1-btn" name="chart1-btn" class="btn btn-primary">Gráfica 1</button>
+      </div>
+  </form>
+
   </body>
+  <script src="script.js"></script>
 </html>
