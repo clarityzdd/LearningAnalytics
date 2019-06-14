@@ -39,6 +39,12 @@ then
     length=${14}
     length_num=${15}
 
-    spark-submit --class myproject.Main ./public/jar/scalaapp_2.11-0.1.jar $filter "'"$gender"'" "'"$region"'" "'"$education"'" "'"$age"'" "'"$disability"'" "'"$result"'" registration registration_num clicks clicks_num "'"activity"'" week length length_num
+    spark-submit --class myproject.Main ./public/jar/scalaapp_2.11-0.1.jar $filter "'"$gender"'" "'"$region"'" "'"$education"'" "'"$age"'" "'"$disability"'" "'"$result"'" $registration $registration_num $clicks $clicks_num "'"$activity"'" $week $length $length_num
+
+
+elif [ $1 == "chart1" ]
+then
+
+    spark-submit --class myproject.Main ./public/jar/scalaapp_2.11-0.1.jar $filter "'"Exam"'" undefined undefined undefined "'"undefined"'" "'"undefined"'" "'"Post"'" "'"35-55"'" "'"N"'" "'"undefined"'"
 
 fi

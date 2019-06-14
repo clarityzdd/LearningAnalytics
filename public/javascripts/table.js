@@ -4,11 +4,12 @@ $(document).ready(function () {
         var jsonItems = [];      // Array para JSON
         $.each(data, function (index, value) {
             jsonItems.push(value);
+            return index<499;
         });
 
         // Extrae header de la tabla
         var col = [];
-        for (var i = 0; i < 1000; i++) {
+        for (var i = 0; i < jsonItems.length; i++) {
             for (var j in jsonItems[i]) {
                 if (col.indexOf(j) === -1) {
                     col.push(j);
@@ -29,7 +30,7 @@ $(document).ready(function () {
         }
 
         // Rellena la tabla por filas
-        for (var i = 0; i < 1000; i++) {
+        for (var i = 0; i < jsonItems.length; i++) {
 
             tr = table.insertRow(-1);
 

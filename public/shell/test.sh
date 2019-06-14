@@ -59,4 +59,8 @@ then
     echo WEEK: $week
     echo LENGTH: $length
     echo LENGTH_NUM: $length_num
+
+elif [ $1 == "chart1" ]
+then
+    echo "CHART1 QUERY"
 fi

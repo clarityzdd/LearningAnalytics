@@ -23,7 +23,7 @@ router.post('/table', function(req, res, next) {
   var disability = req.body.disability;
   var result = req.body.result;
 
-  var registration = req.body.registration;
+  var registration = req.body.registration_check;
   var registration_num = req.body.registration_num;
     if(registration_num === "") registration_num = "undefined";
   var clicks = req.body.clicks;
@@ -37,19 +37,23 @@ router.post('/table', function(req, res, next) {
     if(length_num === "") length_num = "undefined";
 
   if (filter === "assessment") {
-    console.log("TEST" + shell.exec('./public/shell/test.sh ' + filter + ' ' + assessment_type + ' ' + weight + ' ' + score + ' ' + score_num + ' ' + gender + ' ' + region + ' ' + education + ' ' + age + ' ' + disability + ' ' + result));
-    //console.log("[SPARK SUBMIT]" + shell.exec('./public/shell/submit.sh '+ filter + ' ' + assessment_type + ' ' + weight + ' ' + score + ' ' + score_num + ' ' + gender + ' ' + region + ' ' + education + ' ' + age + ' ' + disability + ' ' + result));
-    //console.log("[SPARK GET]" + shell.exec('./public/shell/getData.sh'));
+    console.log("ASSESSMENT TEST " + shell.exec('./public/shell/test.sh ' + filter + ' ' + assessment_type + ' ' + weight + ' ' + score + ' ' + score_num + ' ' + gender + ' ' + region + ' ' + education + ' ' + age + ' ' + disability + ' ' + result));
+    //console.log(" [SPARK SUBMIT]" + shell.exec('./public/shell/submit.sh '+ filter + ' ' + assessment_type + ' ' + weight + ' ' + score + ' ' + score_num + ' ' + gender + ' ' + region + ' ' + education + ' ' + age + ' ' + disability + ' ' + result));
+    //console.log(" [SPARK GET]" + shell.exec('./public/shell/getData.sh'));
   } else if (filter === "course") {
-    console.log("TEST" + shell.exec('./public/shell/test.sh ' + filter + ' ' + gender + ' ' + region + ' ' + education + ' ' + age + ' ' + disability + ' ' + result + ' ' + registration + ' ' + registration_num + ' ' + clicks + ' ' + clicks_num + ' ' + activity + ' ' + week + ' ' + length + ' ' + length_num));
-    //console.log("[SPARK SUBMIT]" + shell.exec('./public/shell/submit.sh '+ filter + ' ' + gender + ' ' + region + ' ' + education + ' ' + age + ' ' + disability + ' ' + result + ' ' + registration + ' ' + registration_num + ' ' + clicks + ' ' + clicks_num + ' ' + activity + ' ' + week + ' ' + length + ' ' + length_num));
-    //console.log("[SPARK GET]" + shell.exec('./public/shell/getData.sh'));
+    console.log("COURSE TEST " + shell.exec('./public/shell/test.sh ' + filter + ' ' + gender + ' ' + region + ' ' + education + ' ' + age + ' ' + disability + ' ' + result + ' ' + registration + ' ' + registration_num + ' ' + clicks + ' ' + clicks_num + ' ' + activity + ' ' + week + ' ' + length + ' ' + length_num));
+    //console.log(" [SPARK SUBMIT] " + shell.exec('./public/shell/submit.sh ' + filter + ' ' + gender + ' ' + region + ' ' + education + ' ' + age + ' ' + disability + ' ' + result + ' ' + registration + ' ' + registration_num + ' ' + clicks + ' ' + clicks_num + ' ' + activity + ' ' + week + ' ' + length + ' ' + length_num));
+    //console.log(" [SPARK GET] " + shell.exec('./public/shell/getData.sh'));
   }
 
   res.render('../views/table.ejs', { title: 'Learning Analytics App' });
 });
 
 router.post('/chart1', function(req, res, next) {
+  console.log("CHART1 TEST" +  shell.exec('./public/shell/test.sh ' + "chart1"));
+  //console.log(" [SPARK SUBMIT CHART1]" + shell.exec('./public/shell/submit.sh '+ "chart1"));
+  //console.log(" [SPARK GET] " + shell.exec('./public/shell/getData.sh'));
+
   res.render('../views/chart.ejs', { title: 'Learning Analytics App' });
 });
 

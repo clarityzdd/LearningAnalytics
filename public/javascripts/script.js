@@ -101,5 +101,11 @@ function checkboxCheck6(element){
 }
 
 function sendIt() {
-    alert("Consulta enviada");
+    alert("Consulta enviada, por favor espere");
 }
+
+window.onbeforeunload = function() {
+    document.getElementById("form").style.display = 'none';
+    document.getElementById("form2").style.display = 'none';
+    document.getElementById("glass").style.display = 'block';
+};

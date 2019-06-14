@@ -9,6 +9,8 @@
   </head>
   <body>
 
+  <div id="glass" class="lds-hourglass"></div>
+
   <form class="form-horizontal dataentry" id="form" action="/table" method="post">
     <fieldset>
      <div class="row">
@@ -159,12 +161,12 @@
                        <label class="col-md-6 control-label" for="registration">Días Registrado</label>
                        <div class="col-md-6">
                            <label class="radio-inline" for="registration-0">
-                               <input type="checkbox" name="registration" id="registration-0" value="less" onclick="checkboxCheck4(this)">
+                               <input type="checkbox" name="registration_check" id="registration-0" value="less" onclick="checkboxCheck4(this)">
                                <i class="fa fa-less-than-equal"></i>
                            </label>&nbsp;
-                           <input type="text" name="registration_num" id="registration-num" placeholder="0-365" style="width: 75px">&nbsp;
+                           <input type="text" name="registration_num" id="registration_num" placeholder="0-365" style="width: 75px">&nbsp;
                            <label class="radio-inline" for="registration-1">
-                               <input type="checkbox" name="registration" id="registration-1" value="greater" onclick="checkboxCheck4(this)">
+                               <input type="checkbox" name="registration_check" id="registration-1" value="greater" onclick="checkboxCheck4(this)">
                                <i class="fa fa-greater-than-equal"></i>
                            </label>
                        </div>
@@ -250,9 +252,11 @@
     </fieldset>
   </form>
 
-  <form class="form-horizontal dataentry" id="form" action="/chart1" method="post">
-      <div class="col-md-4">
-        <button id="chart1-btn" name="chart1-btn" class="btn btn-primary">Gráfica 1</button>
+  <form class="form-horizontal dataentry" id="form2" action="/chart1" method="post">
+      <div class="row">
+          <div class="col-4 mx-auto">
+              <br><br><button id="chart1-btn" name="chart1-btn" class="btn btn-primary">Gráfica 1</button>
+          </div>
       </div>
   </form>
 
