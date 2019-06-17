@@ -252,13 +252,24 @@
     </fieldset>
   </form>
 
-  <form class="form-horizontal dataentry" id="form2" action="/chart1" method="post">
-      <div class="row">
-          <div class="col-4 mx-auto">
-              <br><br><button id="chart1-btn" name="chart1-btn" class="btn btn-primary">Gráfica 1</button>
-          </div>
-      </div>
-  </form>
+  <br><div class="row" style="padding-left: 34.5%">
+      <form class="form-horizontal dataentry" id="form2" action="/chart1" method="post">
+          <button id="chart1-btn" name="chart1-btn" class="btn btn-primary" data-toggle="tooltip" data-placement="bottom" title="Notas de exámenes de alumnos (35-55 años) con estudios posgrado y sin discapacidad">
+              Gráfica 1
+          </button>
+      </form>
+      <form class="form-horizontal dataentry" id="form3" action="/chart2" method="post">
+          <button id="chart2-btn" name="chart2-btn" class="btn btn-primary" data-toggle="tooltip" data-placement="bottom" title="">
+              Gráfica 2
+          </button>
+      </form>
+
+      <form class="form-horizontal dataentry" id="form4" action="/chart3" method="post">
+          <button id="chart3-btn" name="chart3-btn" class="btn btn-primary" data-toggle="tooltip" data-placement="bottom" title="">
+              Gráfica 3
+          </button>
+      </form>
+  </div>
 
   </body>
   <script src="script.js"></script>

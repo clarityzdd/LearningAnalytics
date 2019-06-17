@@ -21,13 +21,13 @@ $(document).ready(function () {
                 datasets: [{
                     label: 'Graph Line',
                     data: data,
-                    backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f"]
+                    backgroundColor: ["#3cba9f", "#f45555","#706f6f"]
                 }]
             },
             options: {
                 title: {
                     display: true,
-                    text: 'Gráfico 1 - Notas'
+                    text: 'Calificaciones de exámenes en alumnos entre 35-55 años sin discapacidad y con estudios posgrado '
                 },
                 responsive: true,
                 maintainAspectRatio: false,

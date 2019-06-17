@@ -48,6 +48,16 @@ th {
   display:none;
 }
 
+#form2 {
+  padding-left: 2px;
+  padding-right: 10em;
+}
+
+#form3 {
+  padding-right: 10em;
+}
+
+
 #canvas1 {
   width: 30em;
   height: 30em;
@@ -85,3 +95,4 @@ th {
     transform: rotate(1800deg);
   }
 }
+
