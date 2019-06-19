@@ -17,7 +17,6 @@ router.post('/table', function(req, res, next) {
     if (score_num === "") score_num = "undefined";
   var gender = req.body.gender;
   var region = req.body.region;
-    if (region === "") region = "undefined";
   var education = req.body.education;
   var age = req.body.age;
   var disability = req.body.disability;
@@ -54,7 +53,7 @@ router.post('/chart1', function(req, res, next) {
   //console.log(" [SPARK SUBMIT CHART1]" + shell.exec('./public/shell/submit.sh '+ "chart1"));
   //console.log(" [SPARK GET] " + shell.exec('./public/shell/getData.sh'));
 
-  res.render('../views/chart.ejs', { title: 'Learning Analytics App' });
+  res.render('../views/chart1.ejs', { title: 'Learning Analytics App' });
 });
 
 module.exports = router;

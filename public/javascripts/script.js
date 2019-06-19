@@ -107,5 +107,7 @@ function sendIt() {
 window.onbeforeunload = function() {
     document.getElementById("form").style.display = 'none';
     document.getElementById("form2").style.display = 'none';
+    document.getElementById("form3").style.display = 'none';
+    document.getElementById("form4").style.display = 'none';
     document.getElementById("glass").style.display = 'block';
 };
