@@ -26,6 +26,7 @@ then
     echo AGE: "'"$age"'"
     echo DISABILITY: "'"$disability"'"
     echo RESULT: "'"$result"'"
+
 elif [ $1 == "course" ]
 then
     echo "EJECUTANDO COURSE"
@@ -63,4 +64,8 @@ then
 elif [ $1 == "chart1" ]
 then
     echo "CHART1 QUERY"
+
+elif [ $1 == "chart2" ]
+then
+    echo "CHART2 QUERY"
 fi

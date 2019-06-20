@@ -73,6 +73,11 @@ th {
   height: 30em;
 }
 
+#canvas3 {
+  width: 30em;
+  height: 30em;
+}
+
 .lds-hourglass {
   display: none;
   position: relative;

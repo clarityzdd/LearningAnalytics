@@ -41,10 +41,19 @@ then
 
     spark-submit --class myproject.Main ./public/jar/scalaapp_2.11-0.1.jar $filter "'"$gender"'" "'"$region"'" "'"$education"'" "'"$age"'" "'"$disability"'" "'"$result"'" $registration $registration_num $clicks $clicks_num "'"$activity"'" $week $length $length_num
 
-
 elif [ $1 == "chart1" ]
 then
 
     spark-submit --class myproject.Main ./public/jar/scalaapp_2.11-0.1.jar $filter "'"Exam"'" undefined undefined undefined "'"undefined"'" "'"undefined"'" "'"Post"'" "'"35-55"'" "'"N"'" "'"undefined"'"
+
+elif [ $1 == "chart2" ]
+then
+
+    spark-submit --class myproject.Main ./public/jar/scalaapp_2.11-0.1.jar $filter "'"undefined"'" undefined undefined undefined "'"undefined"'" "'"undefined"'" "'"undefined"'" "'"undefined"'" "'"undefined"'" "'"undefined"'"
+
+elif [ $1 == "chart3" ]
+then
+
+    spark-submit --class myproject.Main ./public/jar/scalaapp_2.11-0.1.jar $filter "'"undefined"'" undefined undefined undefined "'"undefined"'" "'"undefined"'" "'"undefined"'" "'"undefined"'" "'"undefined"'" "'"undefined"'"
 
 fi
