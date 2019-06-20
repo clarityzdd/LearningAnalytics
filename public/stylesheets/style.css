@@ -54,18 +54,34 @@ th {
 }
 
 #form2 {
-  padding-left: 2px;
-  padding-right: 10em;
+  padding-left: 8px;
+  padding-right: 4.5em;
 }
 
 #form3 {
-  padding-right: 10em;
+  padding-right: 4.5em;
 }
 
+#form4 {
+  padding-right: 4.5em;
+}
 
-#canvas1 {
-  width: 30em;
-  height: 30em;
+#chart1-container {
+  margin-left: 28%;
+  width: 800px; !important;
+  height: 480px; !important;
+}
+
+#chart2-container {
+  margin-left: 28%;
+  width: 800px; !important;
+  height: 480px; !important;
+}
+
+#chart3-container {
+  margin-left: 24%;
+  width: 800px; !important;
+  height: 480px; !important;
 }
 
 #canvas2 {
@@ -74,6 +90,11 @@ th {
 }
 
 #canvas3 {
+  width: 30em;
+  height: 30em;
+}
+
+#canvas4 {
   width: 30em;
   height: 30em;
 }

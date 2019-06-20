@@ -56,4 +56,9 @@ then
 
     spark-submit --class myproject.Main ./public/jar/scalaapp_2.11-0.1.jar $filter "'"undefined"'" undefined undefined undefined "'"undefined"'" "'"undefined"'" "'"undefined"'" "'"undefined"'" "'"undefined"'" "'"undefined"'"
 
+elif [ $1 == "chart4" ]
+then
+
+    spark-submit --class myproject.Main ./public/jar/scalaapp_2.11-0.1.jar $filter "'"undefined"'" undefined undefined undefined "'"undefined"'" "'"undefined"'" "'"undefined"'" "'"undefined"'" "'"undefined"'" "'"undefined"'"
+
 fi

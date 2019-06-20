@@ -65,11 +65,19 @@ router.post('/chart2', function(req, res, next) {
 });
 
 router.post('/chart3', function(req, res, next) {
-  //console.log("CHART2 TEST" +  shell.exec('./public/shell/test.sh ' + "chart3"));
-  console.log(" [SPARK SUBMIT CHART1]" + shell.exec('./public/shell/submit.sh '+ "chart3"));
-  console.log(" [SPARK GET] " + shell.exec('./public/shell/getData.sh'));
+  console.log("CHART3 TEST" +  shell.exec('./public/shell/test.sh ' + "chart3"));
+  //console.log(" [SPARK SUBMIT CHART1]" + shell.exec('./public/shell/submit.sh '+ "chart3"));
+  //console.log(" [SPARK GET] " + shell.exec('./public/shell/getData.sh'));
 
   res.render('../views/chart3.ejs', { title: 'Learning Analytics App' });
+});
+
+router.post('/chart4', function(req, res, next) {
+  console.log("CHART4 TEST" +  shell.exec('./public/shell/test.sh ' + "chart4"));
+  //console.log(" [SPARK SUBMIT CHART1]" + shell.exec('./public/shell/submit.sh '+ "chart4"));
+  //console.log(" [SPARK GET] " + shell.exec('./public/shell/getData.sh'));
+
+  res.render('../views/chart4.ejs', { title: 'Learning Analytics App' });
 });
 
 module.exports = router;

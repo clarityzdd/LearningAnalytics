@@ -37,9 +37,9 @@ $(document).ready(function () {
         const boxplotData = {
             labels: ['AAA', 'BBB', 'CCC', 'DDD', 'EEE', 'FFF', 'GGG'],
             datasets: [{
-                label: 'Dataset 1',
-                backgroundColor: 'rgba(250,102,102,0.6)',
-                borderColor: 'red',
+                label: 'Calificaciones (MIN-MAX-MEDIAN-QUARTILES)',
+                backgroundColor: 'rgba(66,244,113,0.6)',
+                borderColor: 'green',
                 borderWidth: 2,
                 outlierColor: '#000000',
                 outlierRadius: 0,
