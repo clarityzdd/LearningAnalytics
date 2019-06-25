@@ -16,6 +16,8 @@ function changeSelect(value) {
     }
 }
 
+// Control de checkbox formularios
+
 function checkboxCheck1(element){
 
     if(element.checked){
@@ -103,6 +105,8 @@ function checkboxCheck6(element){
 function sendIt() {
     alert("Consulta enviada, por favor espere");
 }
+
+// Reloj de carga
 
 window.onbeforeunload = function() {
     document.getElementById("form").style.display = 'none';

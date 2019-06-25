@@ -36,46 +36,54 @@ router.post('/table', function(req, res, next) {
     if(length_num === "") length_num = "undefined";
 
   if (filter === "assessment") {
-    console.log("ASSESSMENT TEST " + shell.exec('./public/shell/test.sh ' + filter + ' ' + assessment_type + ' ' + weight + ' ' + score + ' ' + score_num + ' ' + gender + ' ' + region + ' ' + education + ' ' + age + ' ' + disability + ' ' + result));
-    //console.log(" [SPARK SUBMIT]" + shell.exec('./public/shell/submit.sh '+ filter + ' ' + assessment_type + ' ' + weight + ' ' + score + ' ' + score_num + ' ' + gender + ' ' + region + ' ' + education + ' ' + age + ' ' + disability + ' ' + result));
-    //console.log(" [SPARK GET]" + shell.exec('./public/shell/getData.sh'));
+    //console.log("ASSESSMENT TEST " + shell.exec('./public/shell/test.sh ' + filter + ' ' + assessment_type + ' ' + weight + ' ' + score + ' ' + score_num + ' ' + gender + ' ' + region + ' ' + education + ' ' + age + ' ' + disability + ' ' + result));
+    console.log(" [SPARK SUBMIT]" + shell.exec('./public/shell/submit.sh '+ filter + ' ' + assessment_type + ' ' + weight + ' ' + score + ' ' + score_num + ' ' + gender + ' ' + region + ' ' + education + ' ' + age + ' ' + disability + ' ' + result));
+    console.log(" [SPARK GET]" + shell.exec('./public/shell/getData.sh'));
   } else if (filter === "course") {
-    console.log("COURSE TEST " + shell.exec('./public/shell/test.sh ' + filter + ' ' + gender + ' ' + region + ' ' + education + ' ' + age + ' ' + disability + ' ' + result + ' ' + registration + ' ' + registration_num + ' ' + clicks + ' ' + clicks_num + ' ' + activity + ' ' + week + ' ' + length + ' ' + length_num));
-    //console.log(" [SPARK SUBMIT] " + shell.exec('./public/shell/submit.sh ' + filter + ' ' + gender + ' ' + region + ' ' + education + ' ' + age + ' ' + disability + ' ' + result + ' ' + registration + ' ' + registration_num + ' ' + clicks + ' ' + clicks_num + ' ' + activity + ' ' + week + ' ' + length + ' ' + length_num));
-    //console.log(" [SPARK GET] " + shell.exec('./public/shell/getData.sh'));
+    //console.log("COURSE TEST " + shell.exec('./public/shell/test.sh ' + filter + ' ' + gender + ' ' + region + ' ' + education + ' ' + age + ' ' + disability + ' ' + result + ' ' + registration + ' ' + registration_num + ' ' + clicks + ' ' + clicks_num + ' ' + activity + ' ' + week + ' ' + length + ' ' + length_num));
+    console.log(" [SPARK SUBMIT] " + shell.exec('./public/shell/submit.sh ' + filter + ' ' + gender + ' ' + region + ' ' + education + ' ' + age + ' ' + disability + ' ' + result + ' ' + registration + ' ' + registration_num + ' ' + clicks + ' ' + clicks_num + ' ' + activity + ' ' + week + ' ' + length + ' ' + length_num));
+    console.log(" [SPARK GET] " + shell.exec('./public/shell/getData.sh'));
   }
 
   res.render('../views/table.ejs', { title: 'Learning Analytics App' });
 });
 
+// POST GRAFICA 1
+
 router.post('/chart1', function(req, res, next) {
-  console.log("CHART1 TEST" +  shell.exec('./public/shell/test.sh ' + "chart1"));
-  //console.log(" [SPARK SUBMIT CHART1]" + shell.exec('./public/shell/submit.sh '+ "chart1"));
-  //console.log(" [SPARK GET] " + shell.exec('./public/shell/getData.sh'));
+  //console.log("CHART1 TEST" +  shell.exec('./public/shell/test.sh ' + "chart1"));
+  console.log(" [SPARK SUBMIT CHART1]" + shell.exec('./public/shell/submit.sh '+ "chart1"));
+  console.log(" [SPARK GET] " + shell.exec('./public/shell/getData.sh'));
 
   res.render('../views/chart1.ejs', { title: 'Learning Analytics App' });
 });
 
+// POST GRAFICA 2
+
 router.post('/chart2', function(req, res, next) {
-  console.log("CHART2 TEST" +  shell.exec('./public/shell/test.sh ' + "chart2"));
-  //console.log(" [SPARK SUBMIT CHART1]" + shell.exec('./public/shell/submit.sh '+ "chart2"));
-  //console.log(" [SPARK GET] " + shell.exec('./public/shell/getData.sh'));
+  //console.log("CHART2 TEST" +  shell.exec('./public/shell/test.sh ' + "chart2"));
+  console.log(" [SPARK SUBMIT CHART1]" + shell.exec('./public/shell/submit.sh '+ "chart2"));
+  console.log(" [SPARK GET] " + shell.exec('./public/shell/getData.sh'));
 
   res.render('../views/chart2.ejs', { title: 'Learning Analytics App' });
 });
 
+// POST GRAFICA 3
+
 router.post('/chart3', function(req, res, next) {
-  console.log("CHART3 TEST" +  shell.exec('./public/shell/test.sh ' + "chart3"));
-  //console.log(" [SPARK SUBMIT CHART1]" + shell.exec('./public/shell/submit.sh '+ "chart3"));
-  //console.log(" [SPARK GET] " + shell.exec('./public/shell/getData.sh'));
+  //console.log("CHART3 TEST" +  shell.exec('./public/shell/test.sh ' + "chart3"));
+  console.log(" [SPARK SUBMIT CHART1]" + shell.exec('./public/shell/submit.sh '+ "chart3"));
+  console.log(" [SPARK GET] " + shell.exec('./public/shell/getData.sh'));
 
   res.render('../views/chart3.ejs', { title: 'Learning Analytics App' });
 });
 
+// POST GRAFICA 3
+
 router.post('/chart4', function(req, res, next) {
-  console.log("CHART4 TEST" +  shell.exec('./public/shell/test.sh ' + "chart4"));
-  //console.log(" [SPARK SUBMIT CHART1]" + shell.exec('./public/shell/submit.sh '+ "chart4"));
-  //console.log(" [SPARK GET] " + shell.exec('./public/shell/getData.sh'));
+  //console.log("CHART4 TEST" +  shell.exec('./public/shell/test.sh ' + "chart4"));
+  console.log(" [SPARK SUBMIT CHART1]" + shell.exec('./public/shell/submit.sh '+ "chart4"));
+  console.log(" [SPARK GET] " + shell.exec('./public/shell/getData.sh'));
 
   res.render('../views/chart4.ejs', { title: 'Learning Analytics App' });
 });

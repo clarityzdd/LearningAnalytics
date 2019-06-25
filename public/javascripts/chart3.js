@@ -46,6 +46,8 @@ $(document).ready(function () {
             }
         });
 
+        // String to Number
+
         var data1 = d1.map(Number);
         var data2 = d2.map(Number);
         var data3 = d3.map(Number);
